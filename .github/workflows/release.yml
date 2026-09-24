@@ -23,7 +23,7 @@ jobs:
           distribution: temurin
           cache: maven
       - name: Build
-        run: mvn -B package -DskipTests
+        run: mvn -B package -DskipTests -Dproject.branch=development
       - name: Get version
         id: get_version
         run: echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
